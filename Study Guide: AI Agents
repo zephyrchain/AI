@@ -1,0 +1,188 @@
+# Study Guide: AI Agents
+
+## 1. AI Agents Overview
+
+- AI agents constitute autonomous software entities that continuously perceive their environment, interpret inputs, and execute actions to fulfill user-defined objectives.  
+- These systems are distinguished by their goal-oriented behavior, operational autonomy, and user-centric focus.
+
+---
+
+## 2. Components of AI Agents
+
+- **Models**: The core reasoning engines—such as decision trees, neural networks, and large language models—responsible for perception, inference, and planning.  
+- **Tools**: Interfaces and APIs that enable interaction with external systems, databases, or hardware actuators.  
+- **Knowledge & Memory**: Persistent stores (knowledge graphs, vector databases, or episodic logs) that retain facts and past interactions to inform future decisions.  
+- **Audio & Speech**: Speech-to-text and text-to-speech modules facilitating voice-based input and output, including speaker recognition and prosody control.  
+- **Guardrails**: Safety mechanisms—policy filters, content validators, and rate limiters—that enforce ethical constraints and prevent undesirable actions.  
+- **Orchestration**: Deployment and runtime management infrastructure, encompassing monitoring, scaling, rolling updates, and continuous feedback loops in production.
+
+---
+
+## 3. Operational Workflow
+
+1. **Data Acquisition**  
+   Agents ingest information from physical sensors (e.g., cameras, LiDAR), user interfaces (text or voice), and data repositories (databases, documents).
+
+2. **Processing & Decision Making**  
+   - Rule-based logic applies explicit condition–action mappings.  
+   - Machine-learning models predict outcomes or classify inputs.  
+   - Retrieval-Augmented Generation (RAG) fetches external context to enhance responses.
+
+3. **Action Execution**  
+   - API calls trigger external services or update databases.  
+   - Device commands (e.g., smart thermostat adjustments) actuate real-world changes.  
+   - Automated workflows coordinate complex sequences (e.g., e-commerce order fulfillment).
+
+4. **Learning & Optimization**  
+   - Reinforcement learning refines policies based on reward signals.  
+   - Supervised fine-tuning incorporates labeled examples.  
+   - Continuous evaluation metrics guide iterative enhancements.
+
+---
+
+## 4. Architectural Framework and Agent Composition
+
+### 4.1 Core Functional Modules
+
+| Module            | Purpose                                                                                           |
+|-------------------|---------------------------------------------------------------------------------------------------|
+| Profiling Module  | Gathers initial perceptions and defines the agent’s role and contextual parameters.               |
+| Memory Module     | Records and retrieves past interactions to support context-aware decision making.                 |
+| Planning Module   | Generates, evaluates, and selects optimal action sequences using search or optimization.           |
+| Action Module     | Executes chosen actions through actuators or software interfaces, completing the perceive–act loop.|
+
+### 4.2 Agent Composition
+
+- **Architecture**  
+  The hardware or virtual platform (robots, IoT devices, servers) that provides sensors, actuators, and compute resources.
+
+- **Agent Program**  
+  The software component mapping percept histories to actions by orchestrating the functional modules above.
+
+`Agent Function = Architecture + Agent Program`
+
+---
+
+## 5. Classification of Agents
+
+| Dimension            | Agent Type                     | Definition                                                                                  |
+|----------------------|--------------------------------|---------------------------------------------------------------------------------------------|
+| Behavior             | Reactive / Proactive           | Reactive agents respond to immediate stimuli; proactive agents plan ahead.                  |
+| Environment          | Fixed / Dynamic                | Fixed environments follow stable rules; dynamic environments change over time.              |
+| Number of Agents     | Single-Agent / Multi-Agent     | Single agents operate independently; multi-agent systems involve collaboration or competition. |
+| Rationality          | Rational Agent                 | Selects actions that maximize expected achievement of its objectives.                          |
+
+---
+
+## 6. Taxonomy of Agents
+
+### 6.1 Simple Reflex Agents
+
+- Operate solely on the current percept via condition–action rules.  
+- Suitable for fully observable domains; risk infinite loops without state tracking or randomized action selection.
+
+### 6.2 Model-Based Reflex Agents
+
+- Maintain an internal model of world state updated from percept history.  
+- Use state estimation techniques (e.g., Kalman filters) to handle partial observability.
+
+### 6.3 Goal-Based Agents
+
+- Compare current state against explicit goals and employ search/planning algorithms (A*, Dijkstra, STRIPS).  
+- Adapt to changing objectives by modifying goal specifications dynamically.
+
+### 6.4 Utility-Based Agents
+
+- Assign utility values to states to quantify preferences.  
+- Select actions that maximize expected utility under uncertainty, balancing trade-offs such as cost, speed, and risk.
+
+### 6.5 Learning Agents
+
+Four components:
+
+- **Learning Element**: Updates decision policies (e.g., Q-learning, policy gradients).  
+- **Critic**: Evaluates performance against reward signals.  
+- **Performance Element**: Executes actions in the environment.  
+- **Problem Generator**: Suggests exploratory actions to acquire new information.
+
+### 6.6 Multi-Agent Systems (MAS)
+
+| MAS Type       | Characteristics                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Homogeneous    | Agents possess identical capabilities and objectives.                                   |
+| Heterogeneous  | Agents have diverse skills, goals, and behaviors.                                       |
+| Cooperative    | Agents collaborate through negotiation or shared plans (e.g., contract net protocol).   |
+| Competitive    | Agents compete for limited resources or conflicting objectives.                         |
+
+### 6.7 Hierarchical Agents
+
+- Structured into layers of abstraction: high-level agents establish strategy, while low-level agents perform tactical tasks.  
+- Facilitate coordination and resource allocation in complex domains such as robotics and logistics.
+
+---
+
+## 7. Key Characteristics
+
+- **Autonomy**: Operate without step-by-step human intervention.  
+- **Reactivity**: Respond promptly to changes in the environment.  
+- **Proactiveness**: Initiate goal-driven actions.  
+- **Adaptability**: Learn from experience and evolve behavior.  
+- **Social Ability**: Communicate and coordinate within multi-agent contexts.  
+- **Explainability**: Provide human-interpretable rationales for decisions.
+
+---
+
+## 8. Applications
+
+- **Robotics**: Automated manufacturing, service robots, and autonomous navigation.  
+- **Smart Environments**: Home automation, smart grids, and building management systems.  
+- **Transportation**: Traffic optimization, route planning for autonomous vehicles, and logistics management.  
+- **Healthcare**: Patient monitoring, clinical decision support, and personalized treatment planning.  
+- **Finance**: Algorithmic trading, credit evaluation, and fraud detection.  
+- **Entertainment & Simulation**: Non-player character (NPC) behavior, virtual assistants, and training scenarios.
+
+---
+
+## 9. Prompt Engineering Practices
+
+Prompt engineering involves crafting precise inputs to guide language models and AI agents toward desired outcomes.
+
+- Formulate clear instructions and task definitions.  
+- Provide exemplar inputs and outputs (few-shot or zero-shot).  
+- Incorporate chain-of-thought prompts to elicit intermediate reasoning.  
+- Iterate and refine based on performance metrics and edge-case analysis.
+
+---
+
+## 10. Context Engineering Principles
+
+Context engineering focuses on dynamically managing relevant information to optimize agent performance in extended interactions.
+
+- Share only pertinent context to respect memory or token constraints.  
+- Compress, summarize, or prioritize historical data without losing semantic integrity.  
+- Isolate sensitive or proprietary information to maintain security and privacy.
+
+---
+
+## 11. Performance Evaluation and Benchmarking
+
+Benchmarks and evaluation frameworks ensure that agents meet performance, accuracy, and safety requirements.
+
+| Evaluation Type   | Description                                                             | Representative Tools             |
+|-------------------|-------------------------------------------------------------------------|----------------------------------|
+| Model-as-Judge    | Self-evaluation by language models for output coherence and relevance.  | OpenAI Evals, LangSmith          |
+| Rule-Based        | Automated validation against predefined business or logical rules.      | NA10, Custom Validation Scripts  |
+| Human Evaluation  | Expert or crowd-sourced raters assess fluency, correctness, and usability. | Retool, Bespoke Interfaces    |
+
+Key metrics include accuracy, precision/recall, BLEU/ROUGE (for text generation), latency, throughput, and resource utilization.
+
+---
+
+## 12. Recommended Exercises
+
+- Develop a simple reflex agent (e.g., vacuum cleaner simulation) to practice condition–action rule design.  
+- Implement a model-based agent using a Kalman filter for state estimation in a dynamic environment.  
+- Create a goal-based agent that employs A* pathfinding within a maze or graph structure.  
+- Construct a utility-based agent to make stochastic decisions in a simulated investment scenario.  
+- Simulate a multi-agent traffic intersection to explore coordination and negotiation protocols.  
+- Research hierarchical reinforcement learning frameworks (e.g., options, feudal RL) for complex task decomposition.  
